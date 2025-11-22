@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbmq6c0i851yj"]
+
+[ext_resource type="Script" uid="uid://b1j26rh72cblk" path="res://Scripts/game_over_layer.gd" id="1_4mwaf"]
+[ext_resource type="FontFile" uid="uid://bhmd8oyyqua47" path="res://Fonts/Cagliostro-Regular.ttf" id="1_o67e6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1hii"]
+font = ExtResource("1_o67e6")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_i71xq"]
+font = ExtResource("1_o67e6")
+font_size = 14
+
+[node name="GameOverLayer" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_4mwaf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="LabelTitle" type="Label" parent="."]
+offset_left = 111.0
+offset_top = 45.0
+offset_right = 213.0
+offset_bottom = 83.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_p1hii")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelScore" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 119.0
+offset_right = 76.0
+offset_bottom = 142.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_i71xq")
+
+[node name="LabelBest" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 137.0
+offset_right = 94.0
+offset_bottom = 160.0
+text = "Best Score: "
+label_settings = SubResource("LabelSettings_i71xq")
+
+[node name="LabeStart" type="Label" parent="."]
+offset_left = 107.0
+offset_top = 82.0
+offset_right = 224.0
+offset_bottom = 105.0
+text = "Jump to Play Again"
+label_settings = SubResource("LabelSettings_i71xq")

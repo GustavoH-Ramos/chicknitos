@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://4jqi7ul6cgnm"]
+
+[ext_resource type="Script" uid="uid://drp08i42wv8km" path="res://Scripts/item.gd" id="1_76mu4"]
+[ext_resource type="Texture2D" uid="uid://cmlowexbn06il" path="res://Sprites/coletavel.png" id="1_ys0gr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76mu4"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(0, 0, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u06aw"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(120, 0, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btogu"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(240, 0, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnst4"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(360, 0, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_renmp"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(480, 0, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66iod"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(600, 0, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmixh"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(0, 119, 120, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fif6b"]
+atlas = ExtResource("1_ys0gr")
+region = Rect2(120, 119, 120, 119)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66iod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76mu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u06aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btogu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnst4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_renmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66iod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmixh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fif6b")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmixh"]
+size = Vector2(12, 14)
+
+[node name="Item" type="Area2D" groups=["item"]]
+script = ExtResource("1_76mu4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.362395, 0.362395)
+sprite_frames = SubResource("SpriteFrames_66iod")
+animation = &"Spin"
+autoplay = "Spin"
+frame_progress = 0.266574
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jmixh")
